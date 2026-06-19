@@ -4,7 +4,7 @@ A RAG-powered document assistant that lets you upload multiple company documents
 
 ## Live Demo
 
-[Live Demo](#) ← replace with your Streamlit URL
+[Live Demo](https://company-knowledge-base.streamlit.app/)
 
 ## What It Does
 
