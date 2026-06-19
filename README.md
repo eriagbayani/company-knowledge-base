@@ -43,6 +43,9 @@ Source document cited in every response
               ↓
      Streamlit chat UI displays answer + sources
 ```
+## Architecture
+![Architecture](architecture.svg)
+
 
 ## Tech Stack
 

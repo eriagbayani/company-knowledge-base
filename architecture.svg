@@ -1,0 +1,107 @@
+<svg width="800" height="520" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect width="800" height="520" fill="#0f1117" rx="16"/>
+  <text x="400" y="38" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="600">Company Knowledge Base — Architecture</text>
+
+  <!-- UPLOAD LAYER -->
+  <text x="400" y="68" text-anchor="middle" fill="#6b7280" font-size="11" font-weight="500">DOCUMENT UPLOAD</text>
+
+  <rect x="60" y="78" width="130" height="52" rx="8" fill="#1e1e2e" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="125" y="100" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="500">SOP.pdf</text>
+  <text x="125" y="118" text-anchor="middle" fill="#6b7280" font-size="10">company document</text>
+
+  <rect x="210" y="78" width="130" height="52" rx="8" fill="#1e1e2e" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="275" y="100" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="500">FAQ.pdf</text>
+  <text x="275" y="118" text-anchor="middle" fill="#6b7280" font-size="10">company document</text>
+
+  <rect x="360" y="78" width="130" height="52" rx="8" fill="#1e1e2e" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="425" y="100" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="500">Policy.txt</text>
+  <text x="425" y="118" text-anchor="middle" fill="#6b7280" font-size="10">company document</text>
+
+  <rect x="510" y="78" width="130" height="52" rx="8" fill="#1e1e2e" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="575" y="100" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="500">Onboarding.pdf</text>
+  <text x="575" y="118" text-anchor="middle" fill="#6b7280" font-size="10">company document</text>
+
+  <!-- Arrows from docs to chunker -->
+  <line x1="125" y1="130" x2="125" y2="158" stroke="#4b5563" stroke-width="1.2"/>
+  <line x1="275" y1="130" x2="275" y2="158" stroke="#4b5563" stroke-width="1.2"/>
+  <line x1="425" y1="130" x2="425" y2="158" stroke="#4b5563" stroke-width="1.2"/>
+  <line x1="575" y1="130" x2="575" y2="158" stroke="#4b5563" stroke-width="1.2"/>
+  <line x1="125" y1="158" x2="575" y2="158" stroke="#4b5563" stroke-width="1.2"/>
+  <line x1="350" y1="158" x2="350" y2="178" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <!-- INGESTION PIPELINE -->
+  <text x="400" y="196" text-anchor="middle" fill="#6b7280" font-size="11" font-weight="500">INGESTION PIPELINE</text>
+
+  <rect x="160" y="204" width="160" height="52" rx="8" fill="#1e1e2e" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="240" y="226" text-anchor="middle" fill="#c4b5fd" font-size="12" font-weight="500">Chunk</text>
+  <text x="240" y="244" text-anchor="middle" fill="#6b7280" font-size="10">500 chars · 50 overlap · tag source</text>
+
+  <line x1="320" y1="230" x2="350" y2="230" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <rect x="350" y="204" width="160" height="52" rx="8" fill="#1e1e2e" stroke="#10b981" stroke-width="1.5"/>
+  <text x="430" y="226" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="500">Embed</text>
+  <text x="430" y="244" text-anchor="middle" fill="#6b7280" font-size="10">HuggingFace all-MiniLM-L6-v2</text>
+
+  <line x1="510" y1="230" x2="540" y2="230" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <rect x="540" y="204" width="160" height="52" rx="8" fill="#1e1e2e" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="620" y="226" text-anchor="middle" fill="#fcd34d" font-size="12" font-weight="500">Store</text>
+  <text x="620" y="244" text-anchor="middle" fill="#6b7280" font-size="10">ChromaDB in-memory</text>
+
+  <!-- QUERY PIPELINE -->
+  <text x="400" y="286" text-anchor="middle" fill="#6b7280" font-size="11" font-weight="500">QUERY PIPELINE</text>
+
+  <rect x="60" y="294" width="160" height="52" rx="8" fill="#1e1e2e" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="140" y="316" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="500">User Question</text>
+  <text x="140" y="334" text-anchor="middle" fill="#6b7280" font-size="10">"What is the leave policy?"</text>
+
+  <line x1="220" y1="320" x2="250" y2="320" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <rect x="250" y="294" width="160" height="52" rx="8" fill="#1e1e2e" stroke="#10b981" stroke-width="1.5"/>
+  <text x="330" y="316" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="500">Retrieve</text>
+  <text x="330" y="334" text-anchor="middle" fill="#6b7280" font-size="10">top 5 chunks across all docs</text>
+
+  <line x1="410" y1="320" x2="440" y2="320" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <rect x="440" y="294" width="160" height="52" rx="8" fill="#1e1e2e" stroke="#f97316" stroke-width="1.5"/>
+  <text x="520" y="316" text-anchor="middle" fill="#fdba74" font-size="12" font-weight="500">Groq LLM</text>
+  <text x="520" y="334" text-anchor="middle" fill="#6b7280" font-size="10">LLaMA 3.3 70b</text>
+
+  <line x1="600" y1="320" x2="630" y2="320" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <rect x="630" y="294" width="120" height="52" rx="8" fill="#1e1e2e" stroke="#ec4899" stroke-width="1.5"/>
+  <text x="690" y="316" text-anchor="middle" fill="#f9a8d4" font-size="12" font-weight="500">Streamlit</text>
+  <text x="690" y="334" text-anchor="middle" fill="#6b7280" font-size="10">answer + source</text>
+
+  <!-- Vector search connection -->
+  <line x1="620" y1="256" x2="620" y2="294" stroke="#6366f1" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrowblue)"/>
+  <text x="650" y="278" fill="#6366f1" font-size="10">vector search</text>
+
+  <!-- SOURCE CITATION -->
+  <rect x="160" y="378" width="480" height="52" rx="10" fill="#1e1e2e" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="400" y="400" text-anchor="middle" fill="#93c5fd" font-size="13" font-weight="500">Source Citation</text>
+  <text x="400" y="418" text-anchor="middle" fill="#6b7280" font-size="11">Every answer references which document it came from</text>
+
+  <line x1="690" y1="346" x2="690" y2="404" stroke="#4b5563" stroke-width="1.2"/>
+  <line x1="690" y1="404" x2="640" y2="404" stroke="#4b5563" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <!-- TECH STACK -->
+  <rect x="40" y="452" width="720" height="44" rx="8" fill="#1e1e2e" stroke="#374151" stroke-width="1"/>
+  <text x="400" y="470" text-anchor="middle" fill="#9ca3af" font-size="11" font-weight="500">TECH STACK</text>
+  <text x="110" y="488" text-anchor="middle" fill="#c4b5fd" font-size="11">LangChain</text>
+  <text x="210" y="488" text-anchor="middle" fill="#fcd34d" font-size="11">ChromaDB</text>
+  <text x="310" y="488" text-anchor="middle" fill="#6ee7b7" font-size="11">HuggingFace</text>
+  <text x="410" y="488" text-anchor="middle" fill="#fdba74" font-size="11">Groq API</text>
+  <text x="510" y="488" text-anchor="middle" fill="#f9a8d4" font-size="11">Streamlit</text>
+  <text x="610" y="488" text-anchor="middle" fill="#a5b4fc" font-size="11">pypdf</text>
+  <text x="700" y="488" text-anchor="middle" fill="#93c5fd" font-size="11">Python</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#4b5563" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+    <marker id="arrowblue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+  </defs>
+</svg>
